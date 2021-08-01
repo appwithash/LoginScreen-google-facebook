@@ -69,13 +69,13 @@ struct LoginScreenView: View {
                                     .padding(.leading,Screen.maxWidth*0.02)
                             }
                             Image(systemName:self.showPassword ? "eye" : "eye.slash")
-                                .padding()
+                                
                                 .foregroundColor(.white)
                                 .opacity(0.7)
                                 .onTapGesture {
                                     self.showPassword.toggle()
                                 }
-                        }
+                        }.padding(.leading).padding(.trailing)
                     }.frame(width: Screen.maxWidth*0.9, height: Screen.maxHeight*0.06, alignment: .center)
                     
                     Button(action: {
@@ -153,6 +153,6 @@ struct LoginScreenView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginScreenView()
+        LoginScreenView().environmentObject(Users())
     }
 }
